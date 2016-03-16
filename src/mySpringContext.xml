@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<!-- DI依赖注入（xml配置方式） -->
+	<!-- 将A配置到配置文件中 -->
+	<bean id="computer" class="com.myspring.bean.Computer">
+		<!-- 将A的属性配置，使mySpring自动注入到A中 -->
+		<property name="name" value="联想y480"/>
+		<property name="mainboard" value="华硕"/>
+		<property name="cpu" value="Intel"/>
+		<property name="price" value="5000.00"/>
+	</bean>
+	<!-- 将B配置到配置文件中 -->
+	<bean id="student" class="com.myspring.bean.Student">
+		<!-- 将B的属性配置，使mySpring自动注入到B中 -->
+		<property name="name" value="AillsonWei"/>
+		<!-- ref标识将A（bean）注入到B中 -->
+		<property name="computer" ref="computer"/>
+		<property name="age" value="24"/>
+	</bean>
+</beans>
